@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>SSL Info by iamthechad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">SSL Info</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/iamthechad/sslinfo" class="btn">View on GitHub</a>
+      <a href="https://github.com/iamthechad/sslinfo/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/iamthechad/sslinfo/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="ssl-info" class="anchor" href="#ssl-info" aria-hidden="true"><span class="octicon octicon-link"></span></a>SSL Info</h1>
+
+<p>Utility library for determining which SSL/TLS versions and ciphers a server supports</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><strong>This module requires NodeJS 0.12.0 or higher. It will not work on older versions!</strong></p>
+
+<p><strong>You may need to install node-gyp first globally: <code>npm install -g node-gyp</code> (use <code>sudo</code> if needed)</strong></p>
+
+<p>npm install git://github.com/iamthechad/sslinfo.git --save</p>
+
+<p><strong>Note</strong>: This library requires an OpenSSL installation - the newer the better. </p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h3>
+<a id="get-the-server-certificate-enabled-ssltls-protocols-and-supported-ciphers" class="anchor" href="#get-the-server-certificate-enabled-ssltls-protocols-and-supported-ciphers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get the server certificate, enabled SSL/TLS protocols, and supported ciphers.</h3>
+
+<pre><code>var sslinfo = require('sslinfo');
+
+sslinfo.getServerResults({host: "www.google.com", port: 443})
+    .done(function (results) {
+        console.log(results);
+    },
+    function (error) {
+        console.log("Error", {error: error})
+    });
+</code></pre>
+
+<p>The <code>getServerResults()</code> function returns a promise that should be resolved by implementing <code>done()</code>.</p>
+
+<p>Sample output:</p>
+
+<pre><code>{
+    "host": "www.google.com",
+    "port": 443,
+    "cert": {
+        ... certificate information ...
+    },
+    "protocols": [
+        {
+            "protocol": "SSLv2_method",
+            "enabled": false,
+            "error": "The installed openssl library does not support \"SSLv2_method\""
+        },
+        {
+            "protocol": "SSLv3_method",
+            "enabled": true
+        },
+        {
+            "protocol": "TLSv1_method",
+            "enabled": true
+        },
+        {
+            "protocol": "TLSv1_1_method",
+            "enabled": true
+        },
+        {
+            "protocol": "TLSv1_2_method",
+            "enabled": true
+        }
+    ],
+    "ciphers": {
+        "SSLv3_method": {
+            ...
+        },
+        "TLSv1_method": {
+            "enabled": [
+                ... enabled cipher list ...
+            ],
+            "disabled": [
+                ... disabled cipher list ...
+            ],
+            "unsupported": [
+                ... ciphers unsupported by the OpenSSL version ...
+            ]
+        },
+        "TLSv1_1_method": {
+            ...
+        },
+        "TLSv1_2_method": {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<h3>
+<a id="get-information-about-the-installed-openssl-version" class="anchor" href="#get-information-about-the-installed-openssl-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get information about the installed OpenSSL version</h3>
+
+<pre><code>var sslinfo = require('sslinfo');
+
+sslinfo.getOpenSSLCapabilities()
+    .done(function (results) {
+        console.log(results);
+    },
+    function (error) {
+        console.log("Error", {error: error});
+    });
+</code></pre>
+
+<p>The <code>getOpenSSLCapabilities()</code> function returns a promise that should be resolved by implementing <code>done()</code>.</p>
+
+<p>Sample output (from Mac OS X 10.10.3):</p>
+
+<pre><code>{
+    "version": "OpenSSL 0.9.8zd 8 Jan 2015",
+    "protocols": {
+        "supported": [
+            "SSLv3_method",
+            "TLSv1_method",
+            "TLSv1_1_method",
+            "TLSv1_2_method"
+        ],
+        "unsupported": [
+            "SSLv2_method"
+        ]
+    },
+    "ciphers": {
+        "supported": [
+            ... ciphers supported by this OpenSSL version ...
+        ],
+        "unsupported": [
+            ... ciphers supported by this tool, but not the installed OpenSSL version ...
+        ]
+    }
+}
+</code></pre>
+
+<h2>
+<a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release History</h2>
+
+<ul>
+<li>0.1.0 Initial release</li>
+</ul>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/iamthechad/sslinfo">SSL Info</a> is maintained by <a href="https://github.com/iamthechad">iamthechad</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
