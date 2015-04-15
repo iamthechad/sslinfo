@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/iamthechad/sslinfo/issues"
   },
-  "homepage": "https://github.com/iamthechad/sslinfo",
+  "homepage": "http://iamthechad.github.io/sslinfo",
   "dependencies": {
     "openssl-wrapper": "^0.2.1",
     "q": "^1.2.0",
