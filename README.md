@@ -1,3 +1,5 @@
+[![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
+
 SSL Info
 =========
 
