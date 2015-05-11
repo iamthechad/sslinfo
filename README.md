@@ -142,7 +142,11 @@ Sample output (from Mac OS X 10.10.3):
             ]
         }
     }
+    
+**Note:** The `unsupported` cipher list is not necessarily correct. I'm going to investigate how to make this information more useful.
 
 ## Release History
 
 * 0.1.0 Initial release
+* 0.1.1 Project housekeeping. No code changes.
+* 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
