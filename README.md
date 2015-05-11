@@ -11,7 +11,7 @@ Utility library for determining which SSL/TLS versions and ciphers a server supp
   
   **You may need to install node-gyp first globally: `npm install -g node-gyp` (use `sudo` if needed)**
 
-  npm install git://github.com/iamthechad/sslinfo.git --save
+  `npm install git://github.com/iamthechad/sslinfo.git --save`
   
   **Note**: This library requires an OpenSSL installation - the newer the better. 
 
