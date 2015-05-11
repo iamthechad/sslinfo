@@ -1,3 +1,5 @@
+[![NPM](https://nodei.co/npm/sslinfo.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sslinfo/) 
+
 [![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
 
 SSL Info
