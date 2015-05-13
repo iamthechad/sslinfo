@@ -19,7 +19,9 @@
     </section>
 
     <section class="main-content">
-      <h1>
+      <p><a href="https://nodei.co/npm/sslinfo/"><img src="https://nodei.co/npm/sslinfo.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a> </p>
+
+<h1>
 <a id="ssl-info" class="anchor" href="#ssl-info" aria-hidden="true"><span class="octicon octicon-link"></span></a>SSL Info</h1>
 
 <p>Utility library for determining which SSL/TLS versions and ciphers a server supports</p>
@@ -31,7 +33,7 @@
 
 <p><strong>You may need to install node-gyp first globally: <code>npm install -g node-gyp</code> (use <code>sudo</code> if needed)</strong></p>
 
-<p>npm install git://github.com/iamthechad/sslinfo.git --save</p>
+<p><code>npm install sslinfo --save</code></p>
 
 <p><strong>Note</strong>: This library requires an OpenSSL installation - the newer the better. </p>
 
@@ -152,11 +154,15 @@ sslinfo.getOpenSSLCapabilities()
 }
 </code></pre>
 
+<p><strong>Note:</strong> The <code>unsupported</code> cipher list is not necessarily correct. I'm going to investigate how to make this information more useful.</p>
+
 <h2>
 <a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release History</h2>
 
 <ul>
 <li>0.1.0 Initial release</li>
+<li>0.1.1 Project housekeeping. No code changes.</li>
+<li>0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2</li>
 </ul>
 
       <footer class="site-footer">
