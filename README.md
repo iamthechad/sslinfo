@@ -3,7 +3,8 @@
 [![npm version](https://badge.fury.io/js/sslinfo.svg)](http://badge.fury.io/js/sslinfo)
 [![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![Badges](http://img.shields.io/:badges-4/4-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
+[![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
+[![Badges](http://img.shields.io/:badges-5/5-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -60,23 +61,28 @@ Sample output:
         "protocols": [
             {
                 "protocol": "SSLv2_method",
+                "name": "SSLv2",
                 "enabled": false,
                 "error": "The installed openssl library does not support \"SSLv2_method\""
             },
             {
                 "protocol": "SSLv3_method",
+                "name": "SSLv3",
                 "enabled": true
             },
             {
                 "protocol": "TLSv1_method",
+                "name": "TLSv1",
                 "enabled": true
             },
             {
                 "protocol": "TLSv1_1_method",
+                "name": "TLSv1.1",
                 "enabled": true
             },
             {
                 "protocol": "TLSv1_2_method",
+                "name": "TLSv1.2",
                 "enabled": true
             }
         ],
@@ -85,6 +91,7 @@ Sample output:
                 ...
             },
             "TLSv1_method": {
+                "name": "TLSv1",
                 "enabled": [
                     ... enabled cipher list ...
                 ],
@@ -125,13 +132,13 @@ Sample output (from Mac OS X 10.10.3):
         "version": "OpenSSL 0.9.8zd 8 Jan 2015",
         "protocols": {
             "supported": [
-                "SSLv3_method",
-                "TLSv1_method",
-                "TLSv1_1_method",
-                "TLSv1_2_method"
+                "SSLv3",
+                "TLSv1",
+                "TLSv1.1",
+                "TLSv1.2"
             ],
             "unsupported": [
-                "SSLv2_method"
+                "SSLv2"
             ]
         },
         "ciphers": {
@@ -148,6 +155,11 @@ Sample output (from Mac OS X 10.10.3):
 
 ## Release History
 
+* 0.1.3 
+    * Add "`name`" property in protocols and cipher results to show the common name vs the name that OpenSSL uses.
+    * Change results of `getOpenSSLCapabilities()` to use common name of protocols.
+* 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
+* 0.1.1 Project housekeeping. No code changes.
 * 0.1.0 Initial release
 * 0.1.1 Project housekeeping. No code changes.
 * 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
