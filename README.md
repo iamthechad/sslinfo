@@ -6,8 +6,6 @@
 [![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
 [![Badges](http://img.shields.io/:badges-5/5-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [SSL Info](#ssl-info)
@@ -16,8 +14,6 @@
     - [Get the server certificate, enabled SSL/TLS protocols, and supported ciphers.](#get-the-server-certificate-enabled-ssltls-protocols-and-supported-ciphers)
     - [Get information about the installed OpenSSL version](#get-information-about-the-installed-openssl-version)
   - [Release History](#release-history)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 SSL Info
 =========
@@ -155,11 +151,10 @@ Sample output (from Mac OS X 10.10.3):
 
 ## Release History
 
+* 0.1.4 Update `x509` package dependency version
 * 0.1.3 
     * Add "`name`" property in protocols and cipher results to show the common name vs the name that OpenSSL uses.
     * Change results of `getOpenSSLCapabilities()` to use common name of protocols.
 * 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
 * 0.1.1 Project housekeeping. No code changes.
 * 0.1.0 Initial release
-* 0.1.1 Project housekeeping. No code changes.
-* 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
