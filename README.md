@@ -106,7 +106,24 @@ Sample output:
             }
         }
     }
-          
+
+**Beginning with NodeJS 4.0.0, SSLv2 and SSLv3 are disabled by default. The sample output will be slightly different in this case.**
+
+    {
+        "host": "www.google.com",
+        "port": 443,
+        "cert": {
+            ... certificate information ...
+        },
+        "protocols": [
+            {
+                "protocol": "SSLv2_method",
+                "name": "SSLv2",
+                "enabled": false,
+                "error": "This version of NodeJS does not support \"SSLv2_method\""
+            }
+        ]
+    }
           
 ### Get information about the installed OpenSSL version
     
@@ -151,6 +168,7 @@ Sample output (from Mac OS X 10.10.3):
 
 ## Release History
 
+* 0.1.5 Fix crash when trying to use SSLv2 or SSLv3 on versions of NodeJS where it's disabled.
 * 0.1.4 Update `x509` package dependency version
 * 0.1.3 
     * Add "`name`" property in protocols and cipher results to show the common name vs the name that OpenSSL uses.

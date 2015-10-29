@@ -1,6 +1,6 @@
 {
   "name": "sslinfo",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Library for inspecting SSL/TLS protocols and ciphers",
   "keywords": [ "ssl", "security", "tls", "cipher" ],
   "main": "ssl.js",
