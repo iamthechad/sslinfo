@@ -165,14 +165,3 @@ Sample output (from Mac OS X 10.10.3):
     }
     
 **Note:** The `unsupported` cipher list is not necessarily correct. I'm going to investigate how to make this information more useful.
-
-## Release History
-
-* 0.1.5 Fix crash when trying to use SSLv2 or SSLv3 on versions of NodeJS where it's disabled.
-* 0.1.4 Update `x509` package dependency version
-* 0.1.3 
-    * Add "`name`" property in protocols and cipher results to show the common name vs the name that OpenSSL uses.
-    * Change results of `getOpenSSLCapabilities()` to use common name of protocols.
-* 0.1.2 Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
-* 0.1.1 Project housekeeping. No code changes.
-* 0.1.0 Initial release
