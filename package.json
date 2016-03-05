@@ -2,7 +2,12 @@
   "name": "sslinfo",
   "version": "0.1.6",
   "description": "Library for inspecting SSL/TLS protocols and ciphers",
-  "keywords": [ "ssl", "security", "tls", "cipher" ],
+  "keywords": [
+    "ssl",
+    "security",
+    "tls",
+    "cipher"
+  ],
   "main": "ssl.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,9 +23,9 @@
   },
   "homepage": "http://iamthechad.github.io/sslinfo",
   "dependencies": {
+    "lodash": "^4.6.1",
     "openssl-wrapper": "^0.2.1",
     "q": "^1.2.0",
-    "underscore": "^1.8.3",
     "x509": "^0.2.2"
   }
 }
