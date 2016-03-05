@@ -2,7 +2,18 @@
 
 ## [Unreleased](https://github.com/iamthechad/sslinfo/tree/HEAD)
 
-[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.6...HEAD)
+[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.7...HEAD)
+
+## [0.1.7](https://github.com/iamthechad/sslinfo/tree/0.1.7) (2016-03-05)
+[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.6...0.1.7)
+
+**Fixed bugs:**
+
+- Closing socket can cause connection reset. [\#5](https://github.com/iamthechad/sslinfo/issues/5)
+
+**Implemented enhancements:**
+
+- Switch to lodash [\#6](https://github.com/iamthechad/sslinfo/issues/6)
 
 ## [0.1.6](https://github.com/iamthechad/sslinfo/tree/0.1.6) (2015-11-21)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.5...0.1.6)
