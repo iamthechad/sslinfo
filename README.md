@@ -127,7 +127,7 @@ Sample output:
     }
 
 ### Server Name Indication (SNI) Support
-To use this method with Servers which support SNI (all servers of cloudflare for example) you have to specify which `servername` could would like to transmit to the remote server:
+To use this module with servers which support SNI (all servers of cloudflare for example) you have to specify which `servername` should be transmitted to the remote server:
 
     sslinfo.getServerResults({host: "www.cloudflare.com", port: 443, servername: "www.cloudflare.com" })
 
