@@ -1,4 +1,4 @@
-[![NPM](https://nodei.co/npm/sslinfo.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sslinfo/) 
+[![NPM](https://nodei.co/npm/sslinfo.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sslinfo/)
 
 [![npm version](https://badge.fury.io/js/sslinfo.svg)](http://badge.fury.io/js/sslinfo)
 [![bitHound Overall Score](https://www.bithound.io/github/iamthechad/sslinfo/badges/score.svg)](https://www.bithound.io/github/iamthechad/sslinfo)
@@ -24,12 +24,12 @@ Utility library for determining which SSL/TLS versions and ciphers a server supp
 ## Installation
 
   **This module requires NodeJS 0.12.0 or higher. It will not work on older versions!**
-  
+
   **You may need to install node-gyp first globally: `npm install -g node-gyp` (use `sudo` if needed)**
 
   `npm install sslinfo --save`
-  
-  **Note**: This library requires an OpenSSL installation - the newer the better. 
+
+  **Note**: This library requires an OpenSSL installation - the newer the better.
 
 ## Usage
 
@@ -44,9 +44,9 @@ Utility library for determining which SSL/TLS versions and ciphers a server supp
         function (error) {
             console.log("Error", {error: error})
         });
-        
+
 The `getServerResults()` function returns a promise that should be resolved by implementing `done()`.
-        
+
 Sample output:
 
     {
@@ -125,11 +125,16 @@ Sample output:
             }
         ]
     }
-          
+
+### Server Name Indication (SNI) Support
+To use this method with Servers which support SNI (all servers of cloudflare for example) you have to specify which `servername` could would like to transmit to the remote server:
+
+    sslinfo.getServerResults({host: "www.cloudflare.com", port: 443, servername: "www.cloudflare.com" })
+
 ### Get information about the installed OpenSSL version
-    
+
     var sslinfo = require('sslinfo');
-              
+
     sslinfo.getOpenSSLCapabilities()
         .done(function (results) {
             console.log(results);
@@ -137,9 +142,9 @@ Sample output:
         function (error) {
             console.log("Error", {error: error});
         });
-        
+
 The `getOpenSSLCapabilities()` function returns a promise that should be resolved by implementing `done()`.
-        
+
 Sample output (from Mac OS X 10.10.3):
 
     {
@@ -164,5 +169,5 @@ Sample output (from Mac OS X 10.10.3):
             ]
         }
     }
-    
+
 **Note:** The `unsupported` cipher list is not necessarily correct. I'm going to investigate how to make this information more useful.
