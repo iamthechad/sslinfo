@@ -1,54 +1,45 @@
 # Change Log
 
-## [Unreleased](https://github.com/iamthechad/sslinfo/tree/HEAD)
+## [0.1.8](https://github.com/iamthechad/sslinfo/tree/0.1.8) (2016-11-14)
+[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.7...0.1.8)
 
-[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.7...HEAD)
+**Merged pull requests:**
+
+- Add missing servername option for SNI. [\#7](https://github.com/iamthechad/sslinfo/pull/7) ([smeinecke](https://github.com/smeinecke))
 
 ## [0.1.7](https://github.com/iamthechad/sslinfo/tree/0.1.7) (2016-03-05)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.6...0.1.7)
 
-**Fixed bugs:**
-
-- Closing socket can cause connection reset. [\#5](https://github.com/iamthechad/sslinfo/issues/5)
-
 **Implemented enhancements:**
 
 - Switch to lodash [\#6](https://github.com/iamthechad/sslinfo/issues/6)
+
+**Fixed bugs:**
+
+- Closing socket can cause connection reset. [\#5](https://github.com/iamthechad/sslinfo/issues/5)
 
 ## [0.1.6](https://github.com/iamthechad/sslinfo/tree/0.1.6) (2015-11-21)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.5...0.1.6)
 
 **Fixed bugs:**
 
-- Process memory keeps growing, never goes down [\#3](https://github.com/iamthechad/sslinfo/issues/3)
+- Error when using NodeJS 4.0.0 or higher [\#2](https://github.com/iamthechad/sslinfo/issues/2)
 
 ## [0.1.5](https://github.com/iamthechad/sslinfo/tree/0.1.5) (2015-10-29)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.4...0.1.5)
-
-**Fixed bugs:**
-
-- Error when using NodeJS 4.0.0 or higher [\#2](https://github.com/iamthechad/sslinfo/issues/2)
 
 ## [0.1.4](https://github.com/iamthechad/sslinfo/tree/0.1.4) (2015-10-02)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.3...0.1.4)
 
 **Implemented enhancements:**
 
-- Update `x509` package dependency version
+- Support "common names" [\#1](https://github.com/iamthechad/sslinfo/issues/1)
 
 ## [0.1.3](https://github.com/iamthechad/sslinfo/tree/0.1.3) (2015-05-29)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.2...0.1.3)
 
-**Implemented enhancements:**
-
-- Support "common names" [\#1](https://github.com/iamthechad/sslinfo/issues/1)
-
 ## [0.1.2](https://github.com/iamthechad/sslinfo/tree/0.1.2) (2015-05-11)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.1...0.1.2)
-
-**Implemented enhancements:**
-
-- Rework how cipher detection works. Use appropriate cipher lists for SSLv3 vs TLS1.0/1.1 vs TLS1.2
 
 ## [0.1.1](https://github.com/iamthechad/sslinfo/tree/0.1.1) (2015-05-11)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.0...0.1.1)
