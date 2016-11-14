@@ -13,7 +13,7 @@ module.exports = {
     /**
      * Determine the supported SSL/TLS protocols and ciphers for a server.
      * Returns a promise.
-     * @param hostData {{ host: string, port: number }}
+     * @param hostData {{ host: string, port: number, [servername]: string }}
      * @returns {promise}
      */
     getServerResults: function(hostData) {

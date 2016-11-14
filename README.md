@@ -7,6 +7,8 @@
 [![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
 [![Badges](http://img.shields.io/:badges-6/6-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [SSL Info](#ssl-info)
@@ -14,7 +16,8 @@
   - [Usage](#usage)
     - [Get the server certificate, enabled SSL/TLS protocols, and supported ciphers.](#get-the-server-certificate-enabled-ssltls-protocols-and-supported-ciphers)
     - [Get information about the installed OpenSSL version](#get-information-about-the-installed-openssl-version)
-  - [Release History](#release-history)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 SSL Info
 =========
@@ -37,13 +40,17 @@ Utility library for determining which SSL/TLS versions and ciphers a server supp
 
     var sslinfo = require('sslinfo');
 
-    sslinfo.getServerResults({host: "www.google.com", port: 443})
+    sslinfo.getServerResults({ host: "www.google.com", port: 443 })
         .done(function (results) {
             console.log(results);
         },
         function (error) {
             console.log("Error", {error: error})
         });
+
+**Note:** To get results from servers which support SNI (all servers of cloudflare for example), specify which `servername` should be transmitted to the remote server:
+
+    sslinfo.getServerResults({ host: "www.cloudflare.com", port: 443, servername: "www.cloudflare.com" })
 
 The `getServerResults()` function returns a promise that should be resolved by implementing `done()`.
 
@@ -125,11 +132,6 @@ Sample output:
             }
         ]
     }
-
-### Server Name Indication (SNI) Support
-To use this module with servers which support SNI (all servers of cloudflare for example) you have to specify which `servername` should be transmitted to the remote server:
-
-    sslinfo.getServerResults({host: "www.cloudflare.com", port: 443, servername: "www.cloudflare.com" })
 
 ### Get information about the installed OpenSSL version
 
