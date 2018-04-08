@@ -1,6 +1,6 @@
 {
   "name": "sslinfo",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "description": "Library for inspecting SSL/TLS protocols and ciphers",
   "keywords": [
     "ssl",
@@ -10,10 +10,11 @@
   ],
   "main": "ssl.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./lib"
   },
   "engines": {
-    "node" : ">=0.12.0"
+    "node": ">=6.9.0"
   },
   "repository": {
     "type": "git",
@@ -24,11 +25,14 @@
   "bugs": {
     "url": "https://github.com/iamthechad/sslinfo/issues"
   },
-  "homepage": "http://iamthechad.github.io/sslinfo",
+  "homepage": "https://github.com/iamthechad/sslinfo",
   "dependencies": {
-    "lodash": "^4.6.1",
+    "lodash": "^4.17.5",
     "openssl-wrapper": "^0.3.4",
-    "q": "^1.2.0",
-    "x509": "^0.3.0"
+    "q": "^1.5.1",
+    "x509": "^0.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1"
   }
 }

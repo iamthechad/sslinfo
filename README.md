@@ -5,7 +5,8 @@
 [![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
-[![Badges](http://img.shields.io/:badges-6/6-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
+[![Known Vulnerabilities](https://snyk.io/test/github/iamthechad/sslinfo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/iamthechad/sslinfo?targetFile=package.json)
+[![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -15,6 +16,7 @@
   - [Installation](#installation)
   - [Usage](#usage)
     - [Get the server certificate, enabled SSL/TLS protocols, and supported ciphers.](#get-the-server-certificate-enabled-ssltls-protocols-and-supported-ciphers)
+    - [Get only the certificate information for a server](#get-only-the-certificate-information-for-a-server)
     - [Get information about the installed OpenSSL version](#get-information-about-the-installed-openssl-version)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -26,9 +28,7 @@ Utility library for determining which SSL/TLS versions and ciphers a server supp
 
 ## Installation
 
-  **This module requires NodeJS 0.12.0 or higher. It will not work on older versions!**
-
-  **You may need to install node-gyp first globally: `npm install -g node-gyp` (use `sudo` if needed)**
+  **This module requires NodeJS v6.9 or higher**
 
   `npm install sslinfo --save`
 
@@ -123,6 +123,7 @@ Sample output:
         "cert": {
             ... certificate information ...
         },
+        "certPEM": '... PEM encoded certificate ...',
         "protocols": [
             {
                 "protocol": "SSLv2_method",
@@ -131,6 +132,42 @@ Sample output:
                 "error": "This version of NodeJS does not support \"SSLv2_method\""
             }
         ]
+    }
+
+### Get only the certificate information for a server
+
+    var sslinfo = require('sslinfo');
+
+    sslinfo.getCertificateInfo({ host: "www.google.com", port: 443 })
+        .done(function (results) {
+            console.log(results);
+        },
+        function (error) {
+            console.log("Error", {error: error})
+        });
+
+The `getCertificateInfo()` function returns a promise that should be resolved by implementing `done()`.
+
+Sample output:
+
+    {
+        "host": "www.google.com",
+        "port": 443,
+        "cert": {
+            { version: 2,
+                 subject:
+                  { countryName: 'US',
+                    stateOrProvinceName: 'California',
+                    localityName: 'Mountain View',
+                    organizationName: 'Google Inc',
+                    commonName: 'www.google.com' },
+                 issuer:
+                  { countryName: 'US',
+                    organizationName: 'Google Inc',
+                    commonName: 'Google Internet Authority G2' },
+                 ... more cert info ...
+        },
+        "certPEM": '... PEM encoded certificate ...'
     }
 
 ### Get information about the installed OpenSSL version
