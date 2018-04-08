@@ -1,5 +1,16 @@
 # Change Log
 
+## [0.2.0](https://github.com/iamthechad/sslinfo/tree/0.2.0) (2018-04-08)
+[Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.8...0.2.0)
+
+**Merged pull requests:**
+
+- Small updates [\#10](https://github.com/iamthechad/sslinfo/pull/10) ([iamthechad](https://github.com/iamthechad))
+
+**Implemented enhancements:**
+
+- Look at reworking PEM access [\#9](https://github.com/iamthechad/sslinfo/issues/9)
+
 ## [0.1.8](https://github.com/iamthechad/sslinfo/tree/0.1.8) (2016-11-14)
 [Full Changelog](https://github.com/iamthechad/sslinfo/compare/0.1.7...0.1.8)
 
