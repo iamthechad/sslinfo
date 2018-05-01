@@ -1,7 +1,7 @@
 [![NPM](https://nodei.co/npm/sslinfo.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/sslinfo/)
 
 [![npm version](https://badge.fury.io/js/sslinfo.svg)](http://badge.fury.io/js/sslinfo)
-[![bitHound Overall Score](https://www.bithound.io/github/iamthechad/sslinfo/badges/score.svg)](https://www.bithound.io/github/iamthechad/sslinfo)
+[![Maintainability](https://api.codeclimate.com/v1/badges/3aafdc7d7d59561f128e/maintainability)](https://codeclimate.com/github/iamthechad/sslinfo/maintainability)
 [![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
