@@ -4,8 +4,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/3aafdc7d7d59561f128e/maintainability)](https://codeclimate.com/github/iamthechad/sslinfo/maintainability)
 [![Dependency Status](https://david-dm.org/iamthechad/sslinfo.svg)](https://david-dm.org/iamthechad/sslinfo)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
-[![Stories in Ready](https://badge.waffle.io/iamthechad/sslinfo.svg?label=ready&title=Ready)](http://waffle.io/iamthechad/sslinfo)
 [![Known Vulnerabilities](https://snyk.io/test/github/iamthechad/sslinfo/badge.svg?targetFile=package.json)](https://snyk.io/test/github/iamthechad/sslinfo?targetFile=package.json)
+![Maintenance](https://img.shields.io/maintenance/yes/2018)
 [![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
